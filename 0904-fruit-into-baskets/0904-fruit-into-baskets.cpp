@@ -6,11 +6,7 @@ public:
         int maxLength =0;
         unordered_map<int, int> m;
         while(right < fruits.size()){
-            if(m.find(fruits[right]) == m.end()){
-                m[fruits[right]] = 1;
-            } else {
-                m[fruits[right]]++;
-            }
+            m.find(fruits[right]) != m.end()? m[fruits[right]]++ : m[fruits[right]] = 1;
             if(m.size() > 2){
                 m[fruits[left]]--;
                 if(m[fruits[left]] == 0){
